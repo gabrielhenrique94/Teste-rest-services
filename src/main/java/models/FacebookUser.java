@@ -55,6 +55,14 @@ public class FacebookUser {
     }
 
     /**
+     * método que retorna o username do usuario
+     * @return String contendo o username
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
      * Método que altera o facebook id do usuario
      * @param facebookId valor a ser colocado no faebook id do objeto
      */

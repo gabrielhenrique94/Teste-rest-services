@@ -1,8 +1,5 @@
 package httpClient;
 
-
-
-import com.google.gson.ExclusionStrategy;
 import com.google.gson.Gson;
 import dto.FacebookUserDTO;
 import models.FacebookUser;

@@ -93,5 +93,4 @@ public class FacebookUserDTO {
         user.setUsername(this.username);
         return user;
     }
-
 }
