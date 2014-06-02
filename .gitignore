@@ -1,9 +1,13 @@
 *.class
 
+#Compiled Maven files
+target/*
+
 # Package Files #
 *.jar
 *.war
 *.ear
+
 # IntelliJ IDEA files
 .idea/*
 *.iml
