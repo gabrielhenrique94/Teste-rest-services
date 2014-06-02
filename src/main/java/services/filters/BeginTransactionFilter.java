@@ -8,12 +8,12 @@ import spark.Response;
 /**
  * Filtro do spark responsavel por abrir uma transação do hibernate
  */
-class BeginTransactionFilter extends Filter {
+public class BeginTransactionFilter extends Filter {
 
-    @Override
     /**
-     * {{@inheritDoc}}
+     * {@inheritDoc}
      */
+    @Override
     public void handle(Request request, Response response) {
         HibernateUtils.getEntityManager().getTransaction().begin();
     }

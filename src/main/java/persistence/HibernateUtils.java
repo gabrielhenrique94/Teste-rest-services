@@ -12,7 +12,7 @@ import javax.persistence.Persistence;
 public class HibernateUtils {
     //Objeto que guarda a lista de entity managers, por thread. simula o requestScope
     private static ThreadLocal<EntityManager> entityManagerList = new ThreadLocal<EntityManager>();
-    //factory do
+    //factory do entity manager
     private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("facebook_user");
 
     /**
@@ -23,7 +23,7 @@ public class HibernateUtils {
         //Como cada requisição roda em uma Thread,
         //essa collection me da alguma garantia de que o EntityManager vai ser unico para cada requisição
         EntityManager em = entityManagerList.get();
-        if(em != null) {
+        if(em == null) {
             em = factory.createEntityManager();
             entityManagerList.set(em);
         }
@@ -31,7 +31,7 @@ public class HibernateUtils {
     }
 
     /**
-     * Método responsavel por fechar o entity manager
+     * Método responsavel por fechar o entity manager e desassocia-lo da thread
      */
     public static void closeEntityManager(){
         getEntityManager().close();

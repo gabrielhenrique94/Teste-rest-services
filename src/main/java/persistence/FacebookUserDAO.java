@@ -3,6 +3,7 @@ package persistence;
 import models.FacebookUser;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 
 import java.util.List;
 
@@ -33,6 +34,18 @@ public class FacebookUserDAO implements DAO<FacebookUser> {
             criteria.setMaxResults(limit);
         }
         return criteria.list();
+    }
+
+    /**
+     * Método que localiza um usuario pelo Id
+     * @param facebookId id do usuario
+     * @return Usuario com o id especificado , ou null no caso dele não existir
+     */
+    public FacebookUser procuraPorId(int facebookId){
+        Criteria criteria = criaCriteria();
+        criteria.add(Restrictions.eq("facebookId", facebookId));
+        List<FacebookUser> busca = criteria.list();
+        return busca.get(0);
     }
 
     /**

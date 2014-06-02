@@ -25,5 +25,4 @@ public interface DAO<T> {
      * @return retorna uma lista com o tamanho maximo passado por parametro, dos objetos que estão salvos
      */
     public List<T> lista(int limit);
-
 }

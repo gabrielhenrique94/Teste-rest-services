@@ -1,5 +1,7 @@
 package models;
 
+import com.google.gson.annotations.SerializedName;
+
 import javax.persistence.*;
 import java.security.InvalidParameterException;
 
@@ -10,31 +12,22 @@ import java.security.InvalidParameterException;
 @Entity
 @Table
 public class FacebookUser {
+    // eu sei que não é uma boa pratica, mas o facebook me garante unicidade dos ids,
+    // então não deveriam existir  efeitos colaterais nisso
     @Id
-    @GeneratedValue
-    private Long id;
-
     @Column(name = "facebook_id")
     private Long facebookId;
 
     @Column(name = "nome")
+    @SerializedName("name")
     private String nome;
 
     @Column(name = "username")
     private String username;
 
     @Column(name = "genero")
+    @SerializedName("gender")
     private String genero;
-
-    //getters e setters.
-
-    /**
-     * Método que retorna o id interno do usuario
-     * @return Long retorna o id do usuario;
-     */
-    public Long getId() {
-        return id;
-    }
 
     /**
      * Método que retorna o id do usuario no facebook
@@ -102,4 +95,5 @@ public class FacebookUser {
             throw new InvalidParameterException("Parametro genero invalido");
         }
     }
+
 }

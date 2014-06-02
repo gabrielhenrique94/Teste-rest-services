@@ -6,10 +6,14 @@ import spark.Request;
 import spark.Response;
 
 /**
- * Created by gabriel on 01/06/2014.
+ * Filtro responsavel por aplicar no banco as modificações feitas durante o tempo de duração da request
+ * e fechar o entity manager
  */
 public class CommitTransactionFilter extends Filter {
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void handle(Request request, Response response) {
         HibernateUtils.getEntityManager().getTransaction().commit();

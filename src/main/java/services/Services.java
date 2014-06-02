@@ -1,5 +1,7 @@
 package services;
 
+import services.filters.CommitTransactionFilter;
+import services.filters.BeginTransactionFilter;
 import spark.Request;
 import spark.Response;
 import spark.Route;
@@ -7,6 +9,15 @@ import spark.Route;
 import spark.Spark;
 
 public class Services {
+    /**
+     * Método que inicia os serviços rest e os filtros
+     */
+    public static void initServices(){
+        //inicia os filtros que abrem e fecham a transação do hibernate
+        Spark.before(new BeginTransactionFilter());
+        Spark.after(new CommitTransactionFilter());
+    }
+
     /**
      * Adiciona um serviço ao servidor, na URI passada como parametro em route,
      * @param service serviço que será adicionado
