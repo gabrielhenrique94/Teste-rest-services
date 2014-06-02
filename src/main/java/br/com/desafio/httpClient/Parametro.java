@@ -1,4 +1,4 @@
-package httpClient;
+package br.com.desafio.httpClient;
 
 import org.apache.http.NameValuePair;
 

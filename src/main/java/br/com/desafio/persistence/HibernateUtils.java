@@ -1,4 +1,4 @@
-package persistence;
+package br.com.desafio.persistence;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

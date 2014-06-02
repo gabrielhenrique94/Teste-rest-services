@@ -1,6 +1,6 @@
-package services.filters;
+package br.com.desafio.services.filters;
 
-import persistence.HibernateUtils;
+import br.com.desafio.persistence.HibernateUtils;
 import spark.Filter;
 import spark.Request;
 import spark.Response;

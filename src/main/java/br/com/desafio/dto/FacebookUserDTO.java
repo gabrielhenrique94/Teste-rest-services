@@ -1,6 +1,6 @@
-package dto;
+package br.com.desafio.dto;
 
-import models.FacebookUser;
+import br.com.desafio.models.FacebookUser;
 
 import java.security.InvalidParameterException;
 

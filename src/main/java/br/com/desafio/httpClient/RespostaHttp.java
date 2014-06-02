@@ -1,4 +1,4 @@
-package httpClient;
+package br.com.desafio.httpClient;
 
 /**
  * Classe que representa resposta de uma requisição http

@@ -1,6 +1,6 @@
-package persistence;
+package br.com.desafio.persistence;
 
-import models.FacebookUser;
+import br.com.desafio.models.FacebookUser;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;

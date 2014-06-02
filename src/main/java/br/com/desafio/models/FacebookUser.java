@@ -1,4 +1,4 @@
-package models;
+package br.com.desafio.models;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -1,4 +1,4 @@
-package persistence;
+package br.com.desafio.persistence;
 
 import java.util.List;
 

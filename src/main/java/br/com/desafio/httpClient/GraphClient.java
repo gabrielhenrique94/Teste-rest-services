@@ -1,8 +1,8 @@
-package httpClient;
+package br.com.desafio.httpClient;
 
 import com.google.gson.Gson;
-import dto.FacebookUserDTO;
-import models.FacebookUser;
+import br.com.desafio.dto.FacebookUserDTO;
+import br.com.desafio.models.FacebookUser;
 
 import java.util.LinkedList;
 
