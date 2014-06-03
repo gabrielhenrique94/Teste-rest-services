@@ -14,7 +14,7 @@ public class Parametro implements NameValuePair {
      * @param name nome do parametro
      * @param value valor do parametro
      */
-    public Parametro(String name , String value){
+    public Parametro(String name, String value){
         this.name = name;
         this.value = value;
     }

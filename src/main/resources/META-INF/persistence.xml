@@ -4,7 +4,7 @@
              version="1.0">
     <persistence-unit name="facebook_user" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <class>models.FacebookUser</class>
+        <class>br.com.desafio.models.FacebookUser</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
             <property name="hibernate.hbm2ddl.auto" value="update" />

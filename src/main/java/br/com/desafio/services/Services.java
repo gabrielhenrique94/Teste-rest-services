@@ -13,9 +13,12 @@ public class Services {
      * Método que inicia os serviços rest e os filtros
      */
     public static void initServices(){
+        Spark.setPort(8080);
         //inicia os filtros que abrem e fecham a transação do hibernate
         Spark.before(new BeginTransactionFilter());
         Spark.after(new CommitTransactionFilter());
+        addServices(new DeleteUserService(), "/person/:facebookId");
+        addServices(new FacebookUserServices(), "/person/");
     }
 
     /**

@@ -11,7 +11,7 @@ public class HibernateUtils {
     //Objeto que guarda a lista de entity managers, por thread. simula o requestScope
     private static ThreadLocal<EntityManager> entityManagerList = new ThreadLocal<EntityManager>();
     //factory do entity manager
-    private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("facebook_user");
+    private static  EntityManagerFactory factory = Persistence.createEntityManagerFactory("facebook_user");
 
     /**
      * Método que cria um EntityManager, associado à Thread que o chama.

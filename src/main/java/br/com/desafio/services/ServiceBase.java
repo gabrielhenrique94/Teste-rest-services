@@ -6,7 +6,7 @@ import spark.Response;
 
 /**
  * Implementação abstrata de um serviço, o objetivo dessa classe é criar um adapter,
- * para implementar apenas os métodos que realmente serão usados
+ * para implementar apenas os métodos que realmente serão usados nas classes filhas
  */
 public abstract class ServiceBase implements Service {
 

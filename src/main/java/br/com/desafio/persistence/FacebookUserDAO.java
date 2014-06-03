@@ -41,11 +41,15 @@ public class FacebookUserDAO implements DAO<FacebookUser> {
      * @param facebookId id do usuario
      * @return Usuario com o id especificado , ou null no caso dele não existir
      */
-    public FacebookUser procuraPorId(int facebookId){
+    public FacebookUser procuraPorId(long facebookId){
         Criteria criteria = criaCriteria();
         criteria.add(Restrictions.eq("facebookId", facebookId));
         List<FacebookUser> busca = criteria.list();
-        return busca.get(0);
+        if(busca.size() > 0) {
+            return busca.get(0);
+        }else{
+            return null;
+        }
     }
 
     /**

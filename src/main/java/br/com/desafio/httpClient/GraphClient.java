@@ -10,6 +10,11 @@ import java.util.LinkedList;
  * Cliente Http para a Graph API do facebook
  */
 public class GraphClient extends ClienteHttp{
+    /**
+     * Método que pega informações de um usuario usando a Graph API
+     * @param id facebook id do usuario
+     * @return Objeto Facebook user com as informações do usuario , ou null caso o usuario não exista
+     */
     public FacebookUser getFacebookUserById(Long id){
         String url = String.format("http://graph.facebook.com/%d", id);
         //não precisa de nenhum parametro
