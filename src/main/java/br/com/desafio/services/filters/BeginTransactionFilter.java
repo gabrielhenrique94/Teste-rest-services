@@ -8,7 +8,7 @@ import spark.Response;
 /**
  * Filtro do spark responsavel por abrir uma transação do hibernate
  */
-public class BeginTransactionFilter extends Filter {
+public class BeginTransactionFilter implements Filter {
 
     /**
      * {@inheritDoc}

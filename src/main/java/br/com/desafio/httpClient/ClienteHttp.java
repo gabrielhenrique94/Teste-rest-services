@@ -59,7 +59,7 @@ public abstract class ClienteHttp {
      * @param parametros Lista com os parametros a serem colocados na URL
      * @return  um objeto contendo o conteudo da reposta e o código de status da resposta
      */
-    protected RespostaHttp delete(String url, List<NameValuePair> parametros) {
+    protected RespostaHttp delete(String url, List<Parametro> parametros) {
         url = url + '?' + URLEncodedUtils.format(parametros, "UTF-8");
         HttpUriRequest request = new HttpDelete(url);
         return executeHttpRequest(request);
@@ -81,11 +81,16 @@ public abstract class ClienteHttp {
             response = cliente.execute(request);
             //pega os bytes de resposta
             HttpEntity entity = response.getEntity();
-            output = new ByteArrayOutputStream();
-            entity.writeTo(output);
-            byte[] byteArray = output.toByteArray();
-            //transforma os bytes em string
-            String stringResposta = new String(byteArray);
+            String stringResposta;
+            if(entity != null){//se a reposta tem corpo
+                output = new ByteArrayOutputStream();
+                entity.writeTo(output);
+                byte[] byteArray = output.toByteArray();
+                //transforma os bytes em string
+               stringResposta = new String(byteArray);
+            }else{
+                stringResposta = "";
+            }
             //coloca o conteudo e o código da resposta no objeto de resposta
             resposta.setConteudo(stringResposta);
             resposta.setStatus(response.getStatusLine().getStatusCode());

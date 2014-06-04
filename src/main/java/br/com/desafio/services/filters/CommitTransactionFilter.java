@@ -9,7 +9,7 @@ import spark.Response;
  * Filtro responsavel por aplicar no banco as modificações feitas durante o tempo de duração da request
  * e fechar o entity manager
  */
-public class CommitTransactionFilter extends Filter {
+public class CommitTransactionFilter implements Filter {
 
     /**
      * {@inheritDoc}

@@ -25,9 +25,9 @@ public class FacebookUserServices extends ServiceBase {
     public String get(Request request, Response response) {
         //pegando o parametro limite
         int limite = 0;
-        if(request.params("limit") != null){
+        if(request.queryParams("limit") != null){
             try{
-                limite = Integer.parseInt(request.params("limit"));
+                limite = Integer.parseInt(request.queryParams("limit"));
             }catch (NumberFormatException ex){
                 response.status(400);
                 return "Incorrect limit format";
@@ -46,17 +46,16 @@ public class FacebookUserServices extends ServiceBase {
      * @param response Objeto que representa a resposta que será enviada para o cliente
      * @return String vazia, ou String contendo explicação do erro
      */
-
     @Override
     public String post(Request request, Response response) {
         //confere se o facebookId foi passado como parametro
-        if(request.params("facebookId") == null){
+        if(request.queryParams("facebookId") == null){
             response.status(400);
             return "This request require a facebookId";
         }
         long facebookId = 0;
         try{
-            facebookId = Long.parseLong(request.params("facebookId"));
+            facebookId = Long.parseLong(request.queryParams("facebookId"));
         }catch (NumberFormatException ex){
             response.status(400);
             return "Incorrect facebookId format";
@@ -69,7 +68,7 @@ public class FacebookUserServices extends ServiceBase {
             FacebookUserDAO dao = new FacebookUserDAO();
             dao.salvar(user);
             response.status(201);
-            return "";
+            return "User saved";
         }else{
             response.status(400);
             return "Invalid facebook Id";
