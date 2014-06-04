@@ -10,15 +10,19 @@ import br.com.desafio.services.Services;
 import junit.framework.TestCase;
 import org.junit.Test;
 
+import java.util.logging.Logger;
+
 /**
  * Classe que testa o serviço de deleção de usuario
  */
 public class DeleteUsuarioTest extends TestCase {
+    Logger log = Logger.getLogger(DeleteUsuarioTest.class.getName());
     /**
-     * Testa que verifica se uma requisição feita corretamente realmente funciona
+     * Teste que verifica se uma requisição feita corretamente realmente funciona
      */
     @Test
     public void testDelecao(){
+        log.info("Testando deleção de usuario");
         Services.initServices();
         long id = 100001333447399L;
         //insere usuario no banco
@@ -43,6 +47,7 @@ public class DeleteUsuarioTest extends TestCase {
      */
     @Test
     public void testFacebookIdNaoNumerico(){
+        log.info("Testando deleção de usuario para ocaso de o facebookId estar errado");
         Services.initServices();
         String id = "is_not_id";
         DesafioClient client = new DesafioClient();
