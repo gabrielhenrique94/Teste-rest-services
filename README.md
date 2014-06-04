@@ -10,7 +10,7 @@ Teste-rest-services
     depois é só executar o jar que esta na pasta target
     java -jar target/facebook-services-1.0-SNAPSHOT-jar-with-dependencies.jar
     O projeto pressupõe aque exite em schema no seu banco de dados chamado facebook_user e que a senha do root é 123456,
-    para alterar o usuario basta alterar o as propriedades do seguinte arquivo src/main/resources/META-INF/ersistence.xml
+    para alterar o usuario basta alterar o as propriedades do seguinte arquivo src/main/resources/META-INF/persistence.xml
     
     *Por algum motivo os testes apotam erros em alguns dos casos quando eu executo eles usando o maven
     (eles funcionaram com o plugin JUnit do inteliJ), provavelmente não terei tempo de resolver isso,
