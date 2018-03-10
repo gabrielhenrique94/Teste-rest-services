@@ -1,11 +1,11 @@
 Teste-rest-services
 ===================
-###Pré-requisitos
+### Pré-requisitos
     - maven
     - java 1.8
     - mysql
 
-###Compilando o projeto
+### Compilando o projeto
     Bastar usar mvn package*
     depois é só executar o jar que esta na pasta target
     java -jar target/facebook-services-1.0-SNAPSHOT-jar-with-dependencies.jar
@@ -22,7 +22,7 @@ Teste-rest-services
         curl -X DELETE http://localhost:8080/person/100007710667474/
     De qualquer forma os testes estão em test/java/br/com/desafio/teste/
 
-###Cobertura dos testes
+### Cobertura dos testes
     os testes cobrem as requisições feitas corretamente
     e testa os possiveis erros de requisições ruins (facebookId no formato errado ou que não existe).
 
